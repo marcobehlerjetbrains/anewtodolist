@@ -29,15 +29,11 @@ version = "2024.03"
 
 project {
 
-    buildType(WhatEver)
-    /*val buildChain = sequential {
-
-    }
-    buildChain.buildTypes().forEach { buildType(it) }*/
+    buildType(Build)
 }
 
-object WhatEver : BuildType({
-    name = "WhatEver"
+object Build : BuildType({
+    name = "Build"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -45,7 +41,7 @@ object WhatEver : BuildType({
 
     steps {
         script {
-            scriptContent = "echo 'what'"
+            scriptContent = "echo 'build'"
         }
     }
 
