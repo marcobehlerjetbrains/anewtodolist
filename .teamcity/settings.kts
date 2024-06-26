@@ -28,11 +28,13 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2024.03"
 
 project {
-    val buildChain = sequential {
-        buildType(WhatEver)
-        buildType(Yoyoy)
+
+    buildType(WhatEver)
+    buildType(Yoyoy)
+    /*val buildChain = sequential {
+
     }
-    buildChain.buildTypes().forEach { buildType(it) }
+    buildChain.buildTypes().forEach { buildType(it) }*/
 }
 
 object WhatEver : BuildType({
