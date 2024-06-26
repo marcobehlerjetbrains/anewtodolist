@@ -29,10 +29,9 @@ version = "2024.03"
 
 project {
     val buildChain = sequential {
-        buildType(Build)
+        buildType(WhatEver)
         buildType(Yoyoy)
     }
-˚
     buildChain.buildTypes().forEach { buildType(it) }
 }
 
