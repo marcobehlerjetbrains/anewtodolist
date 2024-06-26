@@ -29,11 +29,11 @@ version = "2024.03"
 
 project {
 
-    buildType(Build)
+    buildType(Ho)
 }
 
-object Build : BuildType({
-    name = "Build"
+object Ho : BuildType({
+    name = "Ho"
 
     vcs {
         root(DslContext.settingsRoot)
