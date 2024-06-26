@@ -28,12 +28,16 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2024.03"
 
 project {
-
-    buildType(Build)
+    val buildChain = sequential {
+        buildType(Build)
+        buildType(Yoyoy)
+    }
+˚
+    buildChain.buildTypes().forEach { buildType(it) }
 }
 
-object Build : BuildType({
-    name = "Build"
+object WhatEver : BuildType({
+    name = "WhatEver"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -41,7 +45,31 @@ object Build : BuildType({
 
     steps {
         script {
-            scriptContent = "echo 'build'"
+            scriptContent = "echo 'what'"
+        }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+
+    features {
+        perfmon {
+        }
+    }
+})
+
+object Yoyoy : BuildType({
+    name = "Yoyoyo"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            scriptContent = "echo 'Yoyoyo'"
         }
     }
 
