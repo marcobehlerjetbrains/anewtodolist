@@ -30,7 +30,6 @@ version = "2024.03"
 project {
 
     buildType(WhatEver)
-    buildType(Yoyoy)
     /*val buildChain = sequential {
 
     }
@@ -47,30 +46,6 @@ object WhatEver : BuildType({
     steps {
         script {
             scriptContent = "echo 'what'"
-        }
-    }
-
-    triggers {
-        vcs {
-        }
-    }
-
-    features {
-        perfmon {
-        }
-    }
-})
-
-object Yoyoy : BuildType({
-    name = "Yoyoyo"
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        script {
-            scriptContent = "echo 'Yoyoyo'"
         }
     }
 
